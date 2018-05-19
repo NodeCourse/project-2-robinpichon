@@ -1,0 +1,28 @@
+body
+{
+    text-align: center;
+    background-color: lightgrey;
+
+}
+
+.r{
+  color: blue;
+  font-weight: bold;
+}
+
+.sc{
+  display: flex;
+}
+
+.sc{
+    list-style:none;
+    justify-content:center;
+}
+.sc ul li{
+    padding:0;
+    margin:0;
+}
+img {
+  height: 22;
+  width: 22;
+}

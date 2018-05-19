@@ -1,0 +1,8 @@
+link(rel="stylesheet", href="/css/styles.css")
+if error
+    h1 #{error}
+
+form(method="post",action="")
+    input(type="email", name="username", placeholder="email")
+    input(type="password", name="password", placeholder="password")
+    button(type="submit") Log in

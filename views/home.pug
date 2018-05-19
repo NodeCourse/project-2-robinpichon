@@ -1,0 +1,57 @@
+if user
+    html
+        head
+            title TwitterProject
+            link(rel="stylesheet", href="/css/styles.css")
+        body
+              form(method="post")
+              
+                label(for="pseudo") Nom d'utilisateur
+                br
+                input(type="text", id="pseudo", name="pseudo", placeholder="", value=user.email)
+                br
+                br
+                label(for="title") Titre de l'articles
+                br
+                input(type="text", id="title", name="title", placeholder="")
+                br
+                br
+                label(for="content") Article
+                br
+                textarea(id="content", name="content", placeholder="")
+                br
+                br
+                button(type="submit") Publier
+                br
+                br
+                  
+              for article in articles
+                  article  
+                        h1 #{article.pseudo}
+                        h4 #{article.title}
+                        p #{article.content}
+                        ul.sc
+                            li 
+                                form(method="post", action="/" + article.id + "/upvote")
+                                    button(type="submit")
+                                      img(src="img/like.png")
+                                form(method="post", action="/" + article.id + "/downvote")
+                                    button(type="submit")
+                                      img(src="img/dislike.png")
+                            li
+                                h1 (#{article.score})
+                        a(href="/commentaire/" + article.id) Donner un commentaire
+                        each comment in article.reponses
+                          div.r
+                            p  #{comment.reponse} - #{comment.pseudo}
+
+                            
+                            
+else
+        p Please log in or create account.
+          br
+          a(href="/login") Log in
+          br
+          a(href="/create") Create account
+
+              
