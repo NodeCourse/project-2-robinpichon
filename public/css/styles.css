@@ -5,6 +5,11 @@ body
 
 }
 
+.container{
+  width: 350px;
+  margin: auto;
+}
+
 .r{
   color: blue;
   font-weight: bold;

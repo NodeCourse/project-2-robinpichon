@@ -18,7 +18,7 @@ const Vote = db.define('vote', {
 const Article = db.define('article', {
     pseudo: { type: Sequelize.TEXT },
     title: { type: Sequelize.STRING },
-    content: { type: Sequelize.TEXT }
+    Tweet: { type: Sequelize.TEXT }
   }, {
         getterMethods: {
             score() {
@@ -148,10 +148,10 @@ app.get('/commentaire/:id', (req, res) => {
 });
 
 app.post('/', (req, res) => {
-    const { pseudo, title, content, } = req.body;
+    const { pseudo, title, Tweet, } = req.body;
     Article
         .sync()
-        .then(() => Article.create({ pseudo, title, content }))
+        .then(() => Article.create({ pseudo, title, Tweet }))
         .then(() => res.redirect('/'));
 });
 

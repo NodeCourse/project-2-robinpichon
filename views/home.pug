@@ -4,24 +4,28 @@ if user
             title TwitterProject
             link(rel="stylesheet", href="/css/styles.css")
         body
+          div(class="container")
+              a(href="/login") Log in 
+              br
+              a(href="/create") Create account
               form(method="post")
               
-                label(for="pseudo") Nom d'utilisateur
+                label(for="pseudo") Nom d'utilisateur actuel
                 br
                 input(type="text", id="pseudo", name="pseudo", placeholder="", value=user.email)
                 br
                 br
-                label(for="title") Titre de l'articles
+                label(for="title") Titre du Tweet
                 br
                 input(type="text", id="title", name="title", placeholder="")
                 br
                 br
-                label(for="content") Article
+                label(for="Tweet") Tweet
                 br
-                textarea(id="content", name="content", placeholder="")
+                textarea(id="Tweet", name="Tweet", placeholder="#")
                 br
                 br
-                button(type="submit") Publier
+                button(type="submit") Tweeter
                 br
                 br
                   
@@ -29,7 +33,7 @@ if user
                   article  
                         h1 #{article.pseudo}
                         h4 #{article.title}
-                        p #{article.content}
+                        p #{article.Tweet}
                         ul.sc
                             li 
                                 form(method="post", action="/" + article.id + "/upvote")
